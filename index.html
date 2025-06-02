@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TextLabb</title>
+  <style>
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+  transition: top 0.3s ease;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: auto;
+  padding:3px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 100px;
+}
+
+.menu a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: #a8a8a8;
+  font-weight: 200;
+}
+
+.menu a:hover {
+  color: #fff;
+}
+
+/* Banner com parallax */
+.banner-parallax {
+  height: 100vh;
+  background-image: url('https://elsavasquesarq.pt/eurico/imgs/text-lab-homepage-4.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  position: relative;
+}
+
+/* Animação fade + zoom */
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translate(-50%, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 33%;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 8vh;
+    font-weight: bold;
+    color: white;
+    padding: 0 20px;
+    line-height: 1;
+    text-align: left;
+    opacity: 0;
+    animation: fadeInZoom 1.2s ease-out 0.3s forwards;
+    text-transform: uppercase;
+}
+
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.95) translate(-50%, -50%);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+#banner1 {
+  background-image: url('https://elsavasquesarq.pt/eurico/imgs/text-lab-homepage-4.png');
+}
+
+#banner2 {
+  background-image: url('https://elsavasquesarq.pt/eurico/imgs/text-lab-homepage.png');
+}
+
+.banner-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* escurece levemente para destacar texto */
+  position: relative;
+}
+/* Texto que aparece */
+.scroll-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #f7f7f7;
+  text-align: center;
+  padding: 20px;
+}
+
+.fade-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.fade-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-text + .fade-text {
+  font-size: 1.5rem;
+}
+
+
+.scrolling-text {
+  font-size: 3rem;
+  font-weight: normal!important;
+  white-space: nowrap;
+  transition: transform 0.1s linear;
+  text-transform: uppercase;
+}
+.about-section {
+  height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  gap: 40px;
+}
+.services-container a span{
+    font-weight:100!important;
+    color:#fff!important;
+    text-decoration:none!important;
+    z-index:9999;
+}
+@media (min-width: 769px) {
+  .about-container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .services-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .contact-container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 60px;
+  }
+}
+@media (max-width: 768px) {
+    .banner-text{
+        width: 100%;
+        left: 50%;
+    }
+    nav.menu {
+        display: none;
+    }
+    .contact-container{
+        flex-direction: column!important;
+    }
+    .contact-info h2 {
+        font-size: 4.3em!important;
+    }
+    .services-container{
+        flex-direction: column!important;
+    }
+    .about-section{
+        height: 96vh!important;
+    }
+    .about-left h2{
+        font-size: 1.5em!important;
+    }
+    .about-right p {
+        font-size: 1.2rem!important;
+        padding-left: 20px!important;
+    }
+    .scrolling-text {
+        font-size: 2rem!important;
+    }
+    .t-labb-text p {
+        font-size: 1.2rem!important;
+    }
+    .t-labb-text li {
+        font-size: 1.2rem!important;
+    }
+    .service-card{
+        font-size:inherit!important;
+        min-height: 406px;
+    }
+    .footer-container--info {
+        display: flex;
+        justify-content: space-between!important;
+        align-items: flex-start!important;
+        flex-direction: column!important;
+    }
+    div.copyright {
+        width: 100%!important;
+        text-align: center!important;
+        padding-top: 20px!important;
+        font-size: 10px!important;
+    }
+    .contact-form{
+        margin-bottom: -99px!important;
+    }
+}
+.contact-section {
+  padding: 80px 20px;
+  background: #f9f9f9;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+}
+.contact-info {
+  flex: 1;
+}
+
+.contact-info h2 {
+  font-size: 6.3em;
+    line-height: .9;
+    letter-spacing: -2px !important;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 20px;
+    border-left: 20px solid #ddd1c6;
+}
+
+.contact-info h3 {
+  font-size: 2.4rem;
+    margin-bottom: 20px;
+    color: #555;
+    font-weight: 100;
+}
+
+.contact-info p {
+  margin-bottom: 12px;
+  line-height: 1.5;
+  font-weight:100;
+}
+
+.contact-info a {
+  color: #333;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+.contact-form input, textarea::placeholder{
+    font-weight:100!important;
+}
+.contact-form {
+  flex: 1;
+  margin-bottom: -165px;
+background: #fff;
+padding: 30px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form label {
+  margin-bottom: 6px;
+  font-weight: 100;
+  color:#fff;
+}
+
+.contact-form input,
+.contact-form textarea {
+  margin-bottom: 20px;
+  padding: 12px;
+  border: none;
+  border-radius: 0;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  font-size: 1rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.contact-form button {
+  padding: 20px;
+  background-color: #000;
+  color: white;
+  border: none;
+  border-radius: 0;
+  font-weight: 100;
+  text-transform:uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #333;
+}
+
+.about-left h2 {
+    font-size: 2.4em;
+    line-height: .9;
+    letter-spacing: -2px !important;
+    font-weight: bold;
+    text-align: left;
+}
+.about-left {
+  flex: 1;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #222;
+  padding-left:20px;
+  border-left: 20px solid #ddd1c6;
+}
+
+.about-right {
+  flex: 1;
+  padding-right:20px;
+}
+
+.about-right h3 {
+  font-size: 3.2rem;
+  font-weight: 100;
+  margin-bottom: 1rem;
+  color: #444;
+  letter-spacing: 1px;
+}
+
+.about-right p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: #555;
+  font-weight:100;
+}
+
+/* Faixa de texto horizontal */
+.scrolling-text-container {
+  background: #ddd1c6;
+  color:#fff;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+.scrolling-text {
+  font-size: 2.5rem;
+  font-weight: 100!important;
+  white-space: nowrap;
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+.services-section {
+  background: #f7f7f7;
+  padding: 80px 20px;
+}
+
+.services-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.service-card {
+  position: relative;
+  height: 500px;
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration:none;
+  overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  transition: background 0.3s ease;
+}
+
+.service-card h3 {
+  position: relative;
+  z-index: 2;
+}
+.footer {
+  background: #000;
+  color: #fff;
+  padding: 40px 20px 20px;
+  text-align: left;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.social-links a {
+  margin: 20px 5px;
+}
+
+div.copyright{
+  width:100%;
+  text-align:right;
+  font-size:10px;
+}
+.t-labb-section {
+  padding: 80px 20px;
+  background: #fefefe;
+  color: #333;
+}
+
+.t-labb-text {
+  max-width: 900px;
+  margin: 0 auto 60px;
+}
+
+.t-labb-text h2 {
+  font-size: 3.5rem;
+    font-weight: normal;
+}
+
+.t-labb-text .subtitle {
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-bottom: 40px;
+  color: #555;
+  text-align:center;
+}
+
+.t-labb-text p {
+    margin-bottom: 16px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #555;
+    font-weight: 100;
+}
+.t-labb-text ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.t-labb-text li {
+  margin-bottom: 10px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #555;
+    font-weight: 100;
+}
+
+/* Carousel */
+.carousel {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+  text-align:center
+}
+
+.carousel-track {
+  display: inline-flex;
+  gap: 20px;
+  padding: 10px 0;
+}
+.carousel-track::-webkit-scrollbar {
+  display: none!important;
+}
+.carousel-track img {
+  height: 350px;
+  width: 350px;
+  object-fit: cover;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+.about-us--symbol{
+    margin-top:50px;
+}
+.footer-container--info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+p.social-links {
+    margin-top: 40px;
+}
+.footer-right-info{
+    margin-top:40px;
+}
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease;
+}
+
+#loading-logo {
+  width: 80px;
+  height: 80px;
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* Imagem de fundo como pseudo-elemento para aplicar o zoom */
+.service-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  transition: transform 0.5s ease;
+}
+/* Aplica a imagem dinamicamente via atributo style */
+.service-card[style]::after {
+  background-image: inherit;
+}
+/* Optional: main content */
+#main-content {
+  display: none;
+  padding: 20px;
+}
+
+/* imagem separada para zoom controlado */
+.service-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+  z-index: 0;
+}
+
+/* escurecer imagem */
+.service-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+/* texto */
+.service-card h3 {
+  position: relative;
+  z-index: 2;
+}
+
+/* efeito zoom */
+.service-card:hover .service-image {
+  transform: scale(1.1);
+}
+  </style>
+</head>
+<body>
+  <div id="loading-screen">
+    <img id="loading-logo" src="https://elsavasquesarq.pt/eurico/imgs/symbol-loading.png" alt="Logo" />
+  </div>
+  <!-- Header -->
+  <header id="header" class="header">
+    <div class="header-container">
+      <div class="logo">
+        <a href="index.html"><img src="https://elsavasquesarq.pt/eurico/imgs/_branco.png" alt="Logo da Empresa" /></a>
+      </div>
+      <nav class="menu">
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About us</a>
+        <a href="#services">Services</a>
+        <a href="#t-labb">T-LABB Brand</a>
+        <a href="#contact">Contact us</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Banner 1 com parallax -->
+  <section class="banner-parallax" id="banner1">
+      <div class="banner-overlay">
+        <div class="banner-text">
+          <span>Tex Labb & Co</span><br><span style="color: #ddd1c6; font-weight: 100; letter-spacing: -4px;">Let’s make it!</span>
+        </div>
+      </div>
+  </section>
+  
+
+
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <div class="about-left">
+        <h2>GET TO KNOW US</h2>
+      </div>
+      <div class="about-right">
+        <p>
+          At Texlabb, we’re more than just a textile production partner — we’re your creative extension. Born in Portugal and powered by purpose, we help fashion brands bring their ideas to life with innovation, sustainability, and style. From first sketch to final stitch, we’ve got your back. Let’s build something bold together.
+        </p>
+        <p class="about-us--symbol" style="text-align:center;"><img src="https://elsavasquesarq.pt/eurico/imgs/tlabb-symbol.png" height="80"></p>
+      </div>
+    </div>
+
+    <!-- Texto scroll horizontal incorporado -->
+    <div class="scrolling-text-container">
+      <div id="scrollText" class="scrolling-text">
+        Turning Threads into Statements – From Vision to Stitch – We Make it Real.
+        Turning Threads into Statements – From Vision to Stitch – We Make it Real.
+      </div>
+    </div>
+  </section>
+  <section id="services" class="services-section">
+    <div class="services-container">
+        <a href="fabrics.html" class="service-card">
+          <div class="service-image" style="background-image: url('https://elsavasquesarq.pt/eurico/imgs/fabrics.png');"></div>
+          <span>Fabrics</span>
+        </a>
+        <a href="process.html" class="service-card">
+          <div class="service-image" style="background-image: url('https://www.texlabb.com/images/portfolio/work-2.jpg');"></div>
+          <span>Process</span>
+        </a>
+        <a href="product.html" class="service-card">
+          <div class="service-image" style="background-image: url('https://www.texlabb.com/images/portfolio/work-8.jpg');"></div>
+          <span>Product</span>
+        </a>
+    </div>
+  </section>
+  <section id="t-labb" class="t-labb-section">
+    <div class="t-labb-text">
+      <h2 style="text-align:center;">T-LABB BRAND</h2>
+      <p class="subtitle">Ready-to-Go. Ready-to-Wear. Ready for You.</p>
+      <p>
+        Say hello to T-Labb Brand — our exclusive line of premium, ready-made basics. Designed and produced in Portugal using high-quality, responsibly sourced materials, these pieces are made to feel as good as they look.
+      </p>
+      <p>
+        Whether you're looking for the perfect blank canvas or want to launch fast with zero hassle, we've got you covered:
+      </p>
+      <ul>
+        <li>• Buy them as they are – timeless, clean, and crafted to last.</li>
+        <li>• Make them yours – add your logo, custom prints, or special details to turn our core pieces into your brand's next drop.</li>
+      </ul>
+      <p>
+        From tees to hoodies and beyond, we offer the flexibility to adapt to your vision — without compromising on quality or time.
+      </p>
+    </div>
+
+    <!-- Carrossel de produtos -->
+    <div class="carousel">
+      <div class="carousel-track">
+        <img src="https://elsavasquesarq.pt/eurico/imgs/hoodies-1.png" alt="Product 1" />
+        <img src="https://elsavasquesarq.pt/eurico/imgs/hoodies-2.png" alt="Product 2" />
+        <img src="https://elsavasquesarq.pt/eurico/imgs/hoodies-1.png" alt="Product 3" />
+        <img src="https://elsavasquesarq.pt/eurico/imgs/hoodies-2.png" alt="Product 4" />
+        <img src="https://elsavasquesarq.pt/eurico/imgs/hoodies-1.png" alt="Product 5" />
+      </div>
+    </div>
+  </section>
+  <section id="contact" class="contact-section">
+      <div class="contact-container">
+        <!-- Lado Esquerdo -->
+        <div class="contact-info">
+          <h2>CONTACT US</h2>
+          <h3>Get In Touch</h3>
+          <p>Got an idea? A question? Or just want to say hi?<br>
+          We’d love to hear from you. Drop us a line and let’s talk about your next big thing.</p>
+        </div>
+    
+        <!-- Lado Direito - Formulário -->
+        <div class="contact-form">
+          <form>
+            <input placeholder="Name" type="text" id="name" name="name" required />
+    
+            <input placeholder="Email" type="email" id="email" name="email" required />
+    
+            <textarea placeholder="Message" id="message" name="message" rows="5" required></textarea>
+    
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-container--info">    
+          <div class="footer-left-info">  
+              <p><img height="100" src="https://elsavasquesarq.pt/eurico/imgs/_branco.png"></p>
+              <p>Let’s Talk: <a href="mailto:hello@texlabb.com">hello@texlabb.com</a></p>
+              <p>Based in Portugal, Working Worldwide</p>
+          </div>
+          <div class="footer-right-info">
+              <p>📩 <a href="mailto:hello@texlabb.com">hello@texlabb.com</a></p>
+              <p>📍 Portugal</p>
+              <p>🌍 Worldwide service</p>
+          </div>
+      </div>
+      <p class="social-links">
+        <a href="#" target="_blank" style="margin-left:0;">Instagram</a> |
+        <a href="#" target="_blank">LinkedIn</a> |
+        <a href="#" target="_blank">Pinterest</a>
+      </p>
+      <div class="copyright">© 2025 Developed by <a href="">Eurico Vasques</a>.</div>
+    </div>
+    
+  </footer>
+
+
+  <script>
+    // Simula carregamento de conteúdo
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loading-screen');
+      const content = document.getElementById('main-content');
+
+      setTimeout(() => {
+        loader.style.opacity = '0';
+        setTimeout(() => {
+          loader.style.display = 'none';
+          content.style.display = 'block';
+        }, 500);
+      }, 1500); // tempo total do loading em ms
+    });
+  </script>
+
+  <script>
+    // Efeito: mostrar/esconder header
+    let lastScrollTop = 0;
+    const header = document.getElementById('header');
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > lastScrollTop) {
+        header.style.top = "-100px"; // esconde
+      } else {
+        header.style.top = "0"; // mostra
+      }
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+
+      // Fade in texto
+      const trigger = document.getElementById('scroll-section');
+      const headline = document.getElementById('headline');
+      const subheadline = document.getElementById('subheadline');
+      if (currentScroll + window.innerHeight > trigger.offsetTop + 100) {
+        headline.classList.add('visible');
+        subheadline.classList.add('visible');
+      }
+
+      // Movimento horizontal do texto
+      const scrollText = document.getElementById('scrollText');
+      scrollText.style.transform = `translateX(${currentScroll * -0.5}px)`;
+    });
+
+    // Parallax banner
+    window.addEventListener('scroll', () => {
+      const banner = document.getElementById('banner');
+      const offset = window.scrollY;
+      banner.style.backgroundPositionY = `${offset * 0.5}px`;
+    });
+    window.addEventListener('scroll', () => {
+    const scrollText = document.getElementById('scrollText');
+    if (scrollText) {
+      const scrollAmount = window.scrollY;
+      scrollText.style.transform = `translateX(${scrollAmount * -0.5}px)`;
+    }
+  });
+
+  </script>
+
+</body>
+</html>
