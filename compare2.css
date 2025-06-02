@@ -1,0 +1,68 @@
+#banner1 {
+    background-image: url('https://www.texlabb.com/images/portfolio/work-2.jpg');
+  }
+  
+  #banner2 {
+    background-image: url('https://elsavasquesarq.pt/eurico/imgs/fabrics.png');
+  }
+  .about-section {
+    height: 100%;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 80px 20px;
+  }
+  @media (max-width: 768px) {
+    .services-container{
+        flex-direction: column!important;
+        gap: 0 !important;
+    }
+    .services-container a{
+        margin-bottom:15px!important;
+    }
+    .service-card{
+        font-size:inherit!important;
+        padding: 100px 20px!important;
+    }
+  }
+  .about-right h2 {
+    font-size: 3.5rem;
+      font-weight: 100;
+      color: #e1e1e1;
+      text-transform: uppercase;
+  }
+  .services-section {
+    background: #fff;
+    padding: 0 20px;
+  }
+  .services-container a {
+      color: #000;
+      text-decoration: none;
+      border:1px solid #ddd1c6;
+      font-size:18px;
+      padding:10px 50px;
+      margin-bottom:50px;
+  }
+  .service-card {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
+  
+  .service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* escurece imagem para contraste */
+    z-index: 1;
+  }

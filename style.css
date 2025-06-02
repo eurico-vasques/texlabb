@@ -1,0 +1,614 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Helvetica', 'Arial', sans-serif;
+  }
+  
+  /* Header */
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: top 0.3s ease;
+  }
+  
+  .header-container {
+    max-width: 1200px;
+    margin: auto;
+    padding:3px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 70px;
+  }
+  
+  .menu a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #a8a8a8;
+    font-weight: 200;
+  }
+  
+  .menu a:hover {
+    color: #fff;
+  }
+  
+  /* Banner com parallax */
+  .banner-parallax {
+    height: 100vh;
+    background-image: url('https://elsavasquesarq.pt/eurico/imgs/text-lab-homepage-4.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+  }
+  
+  /* Animação fade + zoom */
+  @keyframes fadeInZoom {
+    0% {
+      opacity: 0;
+      transform: scale(0.95) translate(-50%, -50%);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translate(-50%, -50%);
+    }
+  }
+  
+  .banner-text {
+      position: absolute;
+      top: 50%;
+      left: 33%;
+      font-family: 'Helvetica', 'Arial', sans-serif;
+      font-size: 8vh;
+      font-weight: bold;
+      color: white;
+      padding: 0 20px;
+      line-height: 1;
+      text-align: left;
+      opacity: 0;
+      animation: fadeInZoom 1.2s ease-out 0.3s forwards;
+      text-transform: uppercase;
+  }
+  
+  @keyframes fadeInZoom {
+    0% {
+      opacity: 0;
+      transform: scale(0.95) translate(-50%, -50%);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translate(-50%, -50%);
+    }
+  }
+  #banner1 {
+    background-image: url('https://elsavasquesarq.pt/eurico/imgs/text-lab-homepage-4.png');
+  }
+  
+  #banner2 {
+    background-image: url('https://elsavasquesarq.pt/eurico/imgs/text-lab-homepage.png');
+  }
+  
+  .banner-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* escurece levemente para destacar texto */
+    position: relative;
+  }
+  /* Texto que aparece */
+  .scroll-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #f7f7f7;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .fade-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 1s ease;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .fade-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .fade-text + .fade-text {
+    font-size: 1.5rem;
+  }
+  
+  
+  .scrolling-text {
+    font-size: 3rem;
+    font-weight: normal!important;
+    white-space: nowrap;
+    transition: transform 0.1s linear;
+    text-transform: uppercase;
+  }
+  .about-section {
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .about-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    gap: 40px;
+  }
+  .services-container a span{
+      font-weight:100!important;
+      color:#fff!important;
+      text-decoration:none!important;
+      z-index:9999;
+  }
+  @media (min-width: 769px) {
+    .about-container {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+    .services-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .contact-container {
+      flex-direction: row;
+      align-items: flex-start;
+      gap: 60px;
+    }
+  }
+  @media (max-width: 768px) {
+      .banner-text{
+          width: 100%;
+          left: 50%;
+      }
+      nav.menu {
+          display: none;
+      }
+      .contact-container{
+          flex-direction: column!important;
+      }
+      .contact-info h2 {
+          font-size: 4.3em!important;
+      }
+      .services-container{
+          flex-direction: column!important;
+      }
+      .about-section{
+          height: 96vh!important;
+      }
+      .about-left h2{
+          font-size: 1.5em!important;
+      }
+      .about-right p {
+          font-size: 1.2rem!important;
+          padding-left: 20px!important;
+      }
+      .scrolling-text {
+          font-size: 2rem!important;
+      }
+      .t-labb-text p {
+          font-size: 1.2rem!important;
+      }
+      .t-labb-text li {
+          font-size: 1.2rem!important;
+      }
+      .service-card{
+          font-size:inherit!important;
+          min-height: 406px;
+      }
+      .footer-container--info {
+          display: flex;
+          justify-content: space-between!important;
+          align-items: flex-start!important;
+          flex-direction: column!important;
+      }
+      div.copyright {
+          width: 100%!important;
+          text-align: center!important;
+          padding-top: 20px!important;
+          font-size: 10px!important;
+      }
+      .contact-form{
+          margin-bottom: -99px!important;
+      }
+  }
+  .contact-section {
+    padding: 80px 20px;
+    background: #f9f9f9;
+  }
+  
+  .contact-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+  .contact-info {
+    flex: 1;
+  }
+  
+  .contact-info h2 {
+    font-size: 6.3em;
+      line-height: .9;
+      letter-spacing: -2px !important;
+      font-weight: bold;
+      text-align: left;
+      padding-left: 20px;
+      border-left: 20px solid #ddd1c6;
+  }
+  
+  .contact-info h3 {
+    font-size: 2.4rem;
+      margin-bottom: 20px;
+      color: #555;
+      font-weight: 100;
+  }
+  
+  .contact-info p {
+    margin-bottom: 12px;
+    line-height: 1.5;
+    font-weight:100;
+  }
+  
+  .contact-info a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  .contact-form input, textarea::placeholder{
+      font-weight:100!important;
+  }
+  .contact-form {
+    flex: 1;
+    margin-bottom: -165px;
+  background: #fff;
+  padding: 30px;
+  }
+  
+  .contact-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form label {
+    margin-bottom: 6px;
+    font-weight: 100;
+    color:#fff;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    margin-bottom: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 0;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 1rem;
+    border-bottom: 1px solid #e1e1e1;
+  }
+  
+  .contact-form button {
+    padding: 20px;
+    background-color: transparent;
+    color: #ddd1c6;
+    border: none;
+    border-radius: 0;
+    font-weight: 100;
+    text-transform:uppercase;
+    cursor: pointer;
+  }
+  
+  .contact-form button:hover {
+    color: #333!important;
+  }
+  
+  .about-left h2 {
+      font-size: 2.4em;
+      line-height: .9;
+      letter-spacing: -2px !important;
+      font-weight: bold;
+      text-align: left;
+  }
+  .about-left {
+    flex: 1;
+    font-size: 3rem;
+    font-weight: bold;
+    color: #222;
+    padding-left:20px;
+    border-left: 20px solid #ddd1c6;
+  }
+  
+  .about-right {
+    flex: 1;
+    padding-right:20px;
+  }
+  
+  .about-right h3 {
+    font-size: 3.2rem;
+    font-weight: 100;
+    margin-bottom: 1rem;
+    color: #444;
+    letter-spacing: 1px;
+  }
+  
+  .about-right p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #555;
+    font-weight:100;
+  }
+  
+  /* Faixa de texto horizontal */
+  .scrolling-text-container {
+    background: #ddd1c6;
+    color:#fff;
+    padding: 20px 0;
+    overflow: hidden;
+  }
+  
+  .scrolling-text {
+    font-size: 2.5rem;
+    font-weight: 100!important;
+    white-space: nowrap;
+    transition: transform 0.1s linear;
+    will-change: transform;
+  }
+  .services-section {
+    background: #f7f7f7;
+    padding: 80px 20px;
+  }
+  
+  .services-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .service-card {
+    position: relative;
+    height: 500px;
+    flex: 1;
+    display: flex;
+    align-items: flex-end;
+    padding: 20px;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration:none;
+    overflow: hidden;
+  }
+  
+  .service-card::before {
+      content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    transition: background 0.3s ease;
+  }
+  
+  .service-card h3 {
+    position: relative;
+    z-index: 2;
+  }
+  .footer {
+    background: #000;
+    color: #fff;
+    padding: 40px 20px 20px;
+    text-align: left;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 0.95rem;
+  }
+  
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .social-links a {
+    margin: 20px 5px;
+  }
+  
+  div.copyright{
+    width:100%;
+    text-align:right;
+    font-size:10px;
+  }
+  .t-labb-section {
+    padding: 80px 20px;
+    background: #fefefe;
+    color: #333;
+  }
+  
+  .t-labb-text {
+    max-width: 900px;
+    margin: 0 auto 60px;
+  }
+  
+  .t-labb-text h2 {
+    font-size: 3.5rem;
+      font-weight: normal;
+  }
+  
+  .t-labb-text .subtitle {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 40px;
+    color: #555;
+    text-align:center;
+  }
+  
+  .t-labb-text p {
+      margin-bottom: 16px;
+      font-size: 20px;
+      line-height: 1.6;
+      color: #555;
+      font-weight: 100;
+  }
+  .t-labb-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 20px;
+  }
+  
+  .t-labb-text li {
+    margin-bottom: 10px;
+      font-size: 20px;
+      line-height: 1.6;
+      color: #555;
+      font-weight: 100;
+  }
+  
+  /* Carousel */
+  .carousel {
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+    text-align:center
+  }
+  
+  .carousel-track {
+    display: inline-flex;
+    gap: 20px;
+    padding: 10px 0;
+  }
+  .carousel-track::-webkit-scrollbar {
+    display: none!important;
+  }
+  .carousel-track img {
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+  }
+  .about-us--symbol{
+      margin-top:50px;
+  }
+  .footer-container--info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  p.social-links {
+      margin-top: 40px;
+  }
+  .footer-right-info{
+      margin-top:40px;
+  }
+  #loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease;
+  }
+  
+  #loading-logo {
+    width: 80px;
+    height: 80px;
+    animation: rotate 2s linear infinite;
+  }
+  
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  /* Imagem de fundo como pseudo-elemento para aplicar o zoom */
+  .service-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    transition: transform 0.5s ease;
+  }
+  /* Aplica a imagem dinamicamente via atributo style */
+  .service-card[style]::after {
+    background-image: inherit;
+  }
+  /* Optional: main content */
+  #main-content {
+    display: none;
+    padding: 20px;
+  }
+  
+  /* imagem separada para zoom controlado */
+  .service-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+    z-index: 0;
+  }
+  
+  /* escurecer imagem */
+  .service-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+  }
+  
+  /* texto */
+  .service-card h3 {
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* efeito zoom */
+  .service-card:hover .service-image {
+    transform: scale(1.1);
+  }
