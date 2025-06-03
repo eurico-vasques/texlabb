@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TextLabb</title>
   <script src="scripts.js"></script>
-  <link rel="stylesheet" href="style.css">
 <style>
   * {
   margin: 0;
@@ -401,9 +400,17 @@ body {
 }
 .services-container a.button-bottom--left {
     border-right: 4px solid #ddd1c6;
+    text-align: right;
 }
 .services-container a.button-bottom--right {
     border-left: 4px solid #ddd1c6;
+}
+.services-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
 }
 .service-card {
   position: relative;
@@ -623,8 +630,8 @@ p.social-links {
 
   <section class="services-section">
     <div class="services-container">
-        <a href="fabrics.html" class="button-bottom--left"><h3 style="font-weight: normal;"> FABRICS</h3></a>
-        <a href="product.html" class="button-bottom--right"><h3 style="font-weight: normal;">PRODUCT</h3></a>
+        <a href="fabrics.html" class="button-bottom--left">FABRICS</a>
+        <a href="product.html" class="button-bottom--right">PRODUCT</a>
     </div>
   </section>
   <section>

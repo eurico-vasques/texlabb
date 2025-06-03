@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TextLabb</title>
   <script src="scripts.js"></script>
-  <link rel="stylesheet" href="style.css">
   <style>
   * {
   margin: 0;
@@ -410,17 +409,18 @@ body {
   padding: 0 20px;
 }
 .services-container a:hover {
-    color: #ddd1c6;
+    color: #ddd1c6!important;
 }
 .services-container a {
-    color: #000;
+    color: #000!important;
     text-decoration: none;
     font-size: 18px;
     padding: 10px;
     margin-bottom: 50px;
 }
-.services-container a.button-bottom--left {
+.services-container a.button-bottom--left{
     border-right: 4px solid #ddd1c6;
+    text-align: right;
 }
 .services-container a.button-bottom--right {
     border-left: 4px solid #ddd1c6;
@@ -624,8 +624,8 @@ p.social-links {
   </section>
   <section class="services-section">
     <div class="services-container">
-        <a href="process.html" class="button-bottom--left"><h3 style="font-weight: normal;">PROCESS</h3></a>
-        <a href="fabrics.html" class="button-bottom--right"><h3 style="font-weight: normal;">FABRICS</h3></a>
+        <a href="process.html" class="button-bottom--left">PROCESS</a>
+        <a href="fabrics.html" class="button-bottom--right">FABRICS</a>
     </div>
   </section>
   <section>
