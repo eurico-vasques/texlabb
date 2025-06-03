@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TextLabb</title>
   <script src="scripts.js"></script>
+  <link rel="stylesheet" href="style.css">
 <style>
   * {
   margin: 0;
@@ -388,22 +389,22 @@ body {
   background: #fff;
   padding: 0 20px;
 }
+.services-container a:hover {
+    color: #ddd1c6;
+}
 .services-container a {
     color: #000;
     text-decoration: none;
-    border:1px solid #ddd1c6;
-    font-size:18px;
-    padding:10px 50px;
-    margin-bottom:50px;
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 50px;
 }
-.services-container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
+.services-container a.button-bottom--left {
+    border-right: 4px solid #ddd1c6;
 }
-
+.services-container a.button-bottom--right {
+    border-left: 4px solid #ddd1c6;
+}
 .service-card {
   position: relative;
   background-size: cover;
@@ -575,10 +576,6 @@ p.social-links {
   .contact-form button:hover {
     color: #333!important;
   }
-  .services-container a:hover {
-    background: #d8d8d8;
-    color: #fff;
-}
   </style>
 </head>
 <body>
@@ -624,18 +621,10 @@ p.social-links {
     </div>
   </section>
 
-  <section id="services" class="services-section">
+  <section class="services-section">
     <div class="services-container">
-      <!--
-      <div class="service-card" style="background-image: url('https://elsavasquesarq.pt/eurico/imgs/fabrics.png');">
-        <h3 style="font-weight: normal;">FABRICS</h3>
-      </div>-->
-        <a href="fabrics.html"><h3 style="font-weight: normal;"> FABRICS</h3></a>
-        <a href="product.html"><h3 style="font-weight: normal;">PRODUCT</h3></a>
-      <!--
-      <div class="service-card" style="background-image: url('https://www.texlabb.com/images/portfolio/work-8.jpg');">
-        <h3 style="font-weight: normal;">PRODUCT</h3>
-      </div>-->
+        <a href="fabrics.html" class="button-bottom--left"><h3 style="font-weight: normal;"> FABRICS</h3></a>
+        <a href="product.html" class="button-bottom--right"><h3 style="font-weight: normal;">PRODUCT</h3></a>
     </div>
   </section>
   <section>

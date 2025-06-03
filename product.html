@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TextLabb</title>
   <script src="scripts.js"></script>
+  <link rel="stylesheet" href="style.css">
   <style>
   * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Helvetica', 'Arial', sans-serif;
 }
@@ -28,7 +28,6 @@ body {
   z-index: 9999;
   transition: opacity 0.5s ease;
 }
-
 #loading-logo {
   width: 80px;
   height: 80px;
@@ -164,8 +163,6 @@ body {
 .fade-text + .fade-text {
   font-size: 1.5rem;
 }
-
-
 .scrolling-text {
   font-size: 3rem;
   font-weight: normal!important;
@@ -412,13 +409,21 @@ body {
   background: #fff;
   padding: 0 20px;
 }
+.services-container a:hover {
+    color: #ddd1c6;
+}
 .services-container a {
     color: #000;
     text-decoration: none;
-    border:1px solid #ddd1c6;
-    font-size:18px;
-    padding:10px 50px;
-    margin-bottom:50px;
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+.services-container a.button-bottom--left {
+    border-right: 4px solid #ddd1c6;
+}
+.services-container a.button-bottom--right {
+    border-left: 4px solid #ddd1c6;
 }
 .services-container {
   max-width: 1200px;
@@ -617,18 +622,10 @@ p.social-links {
       </div>
     </div>
   </section>
-  <section id="services" class="services-section">
+  <section class="services-section">
     <div class="services-container">
-      <!--
-      <div class="service-card" style="background-image: url('imgs/fabrics.png');">
-        <h3 style="font-weight: normal;">FABRICS</h3>
-      </div>-->
-        <a href="process.html"><h3 style="font-weight: normal;">PROCESS</h3></a>
-        <a href="fabrics.html"><h3 style="font-weight: normal;">FABRICS</h3></a>
-      <!--
-      <div class="service-card" style="background-image: url('https://www.texlabb.com/images/portfolio/work-8.jpg');">
-        <h3 style="font-weight: normal;">PRODUCT</h3>
-      </div>-->
+        <a href="process.html" class="button-bottom--left"><h3 style="font-weight: normal;">PROCESS</h3></a>
+        <a href="fabrics.html" class="button-bottom--right"><h3 style="font-weight: normal;">FABRICS</h3></a>
     </div>
   </section>
   <section>

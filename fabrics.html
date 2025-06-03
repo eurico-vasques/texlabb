@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TextLabb</title>
   <script src="scripts.js"></script>
+  <link rel="stylesheet" href="style.css">
   <style>
     * {
   margin: 0;
@@ -390,13 +391,21 @@ body {
   background: #fff;
   padding: 0 20px;
 }
+.services-container a:hover {
+    color: #ddd1c6;
+}
 .services-container a {
     color: #000;
     text-decoration: none;
-    border:1px solid #ddd1c6;
-    font-size:18px;
-    padding:10px 50px;
-    margin-bottom:50px;
+    font-size: 18px;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+.services-container a.button-bottom--left {
+    border-right: 4px solid #ddd1c6;
+}
+.services-container a.button-bottom--right {
+    border-left: 4px solid #ddd1c6;
 }
 .services-container {
   max-width: 1200px;
@@ -620,16 +629,8 @@ p.social-links {
   </section>
   <section id="services" class="services-section">
     <div class="services-container">
-      <!--
-      <div class="service-card" style="background-image: url('imgs/fabrics.png');">
-        <h3 style="font-weight: normal;">FABRICS</h3>
-      </div>-->
-        <a href="product.html"><h3 style="font-weight: normal;">PRODUCT</h3></a>
-        <a href="process.html"><h3 style="font-weight: normal;">PROCESS</h3></a>
-      <!--
-      <div class="service-card" style="background-image: url('https://www.texlabb.com/images/portfolio/work-8.jpg');">
-        <h3 style="font-weight: normal;">PRODUCT</h3>
-      </div>-->
+        <a href="product.html" class="button-bottom--left"><h3 style="font-weight: normal;">PRODUCT</h3></a>
+        <a href="process.html" class="button-bottom--right"><h3 style="font-weight: normal;">PROCESS</h3></a>
     </div>
   </section>
   <section>
@@ -642,29 +643,29 @@ p.social-links {
     </div>
   </section>
   <section id="contact" class="contact-section">
-      <div class="contact-container">
-        <!-- Lado Esquerdo -->
-        <div class="contact-info">
-          <h2>CONTACT US</h2>
-          <h3>Get In Touch</h3>
-          <p>Got an idea? A question? Or just want to say hi?<br>
-          We’d love to hear from you. Drop us a line and let’s talk about your next big thing.</p>
-        </div>
-    
-        <!-- Lado Direito - Formulário -->
-        <div class="contact-form">
-          <form>
-            <input placeholder="Name" type="text" id="name" name="name" required />
-    
-            <input placeholder="Email" type="email" id="email" name="email" required />
-    
-            <textarea placeholder="Message" id="message" name="message" rows="5" required></textarea>
-    
-            <button type="submit">Send Message</button>
-          </form>
-        </div>
+    <div class="contact-container">
+      <!-- Lado Esquerdo -->
+      <div class="contact-info">
+        <h2>CONTACT US</h2>
+        <h3>Get In Touch</h3>
+        <p>Got an idea? A question? Or just want to say hi?<br>
+        We’d love to hear from you. Drop us a line and let’s talk about your next big thing.</p>
       </div>
-    </section>
+  
+      <!-- Lado Direito - Formulário -->
+      <div class="contact-form">
+        <form>
+          <input placeholder="Name" type="text" id="name" name="name" required />
+  
+          <input placeholder="Email" type="email" id="email" name="email" required />
+  
+          <textarea placeholder="Message" id="message" name="message" rows="5" required></textarea>
+  
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
   <footer class="footer">
     <div class="footer-container">

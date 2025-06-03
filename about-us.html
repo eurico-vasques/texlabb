@@ -175,7 +175,7 @@ body {
   transition: transform 0.1s linear;
   text-transform: uppercase;
 }
-.about-section {
+.generic-section {
   height: 100%;
   background: #fff;
   display: flex;
@@ -184,7 +184,7 @@ body {
   padding: 80px 20px;
 }
 
-.about-container {
+.generic-container {
   max-width: 1200px;
   margin: auto;
   display: flex;
@@ -194,7 +194,7 @@ body {
 }
 
 @media (min-width: 769px) {
-  .about-container {
+  .generic-container {
     flex-direction: row;
     align-items: flex-start;
   }
@@ -229,13 +229,13 @@ body {
     .services-container a{
         margin-bottom:15px!important;
     }
-    .about-section{
+    .generic-section{
         height: 96vh!important;
     }
-    .about-left h2{
+    .generic-container-left h2{
         font-size: 1.5em!important;
     }
-    .about-right p {
+    .generic-container-right p {
         font-size: 1.2rem!important;
     }
     .scrolling-text {
@@ -357,34 +357,34 @@ body {
   cursor: pointer;
 }
 
-.about-left h2 {
+.generic-container-left h2 {
     font-size: 2.4em;
     line-height: .9;
     letter-spacing: -2px !important;
     font-weight: bold;
     text-align: left;
 }
-.about-left {
+.generic-container-left {
   flex: 1;
 }
-.about-left img {
+.generic-container-left img {
     max-width: 425px;
     width: auto;
 }
-.about-right h3 {
+.generic-container-right h3 {
   font-size: 3.2rem;
   font-weight: 100;
   margin-bottom: 1rem;
   color: #444;
   letter-spacing: 1px;
 }
-.about-right h2 {
+.generic-container-right h2 {
   font-size: 2rem;
     font-weight: 100;
     color: #e1e1e1;
     text-transform: uppercase;
 }
-.about-right p {
+.generic-container-right p {
   font-size: 20px;
   line-height: 1.6;
   color: #555;
@@ -601,15 +601,12 @@ p.social-links {
         </div>
       </div>
   </section>
-  
-
-
-  <section id="about" class="about-section">
-    <div class="about-container">
-      <div class="about-left">
+  <section class="generic-section">
+    <div class="generic-container">
+      <div class="generic-container-left">
         <img src="imgs/about-us1.png">
       </div>
-      <div class="about-right">
+      <div class="generic-container-right">
         <p>
           Every great piece starts with a story — and ours begins with a passion for craftsmanship and collaboration. At Texlabb, we believe the process matters just as much as the product. That's why we combine creativity, tech, and human touch to deliver made-in-Portugal excellence that’s tailored to your brand.
         </p><br><br>
