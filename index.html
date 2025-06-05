@@ -163,17 +163,17 @@
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const menuWrapper = document.getElementById('menu-wrapper');
-    const header = document.getElementById('header');
-
+    const header = document.getElementById('site-logo');
+  
     menuToggle.addEventListener('click', () => {
       const isOpen = menuWrapper.classList.toggle('show');
       menuToggle.classList.toggle('active');
-
-      // Altera o fundo do header
+  
+      // Trocar logo
       if (isOpen) {
-        header.classList.add('menu-open');
+        logo.src = 'imgs/preto.png';
       } else {
-        header.classList.remove('menu-open');
+        logo.src = 'imgs/_branco.png';
       }
     });
   </script>
