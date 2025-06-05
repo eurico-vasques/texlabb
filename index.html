@@ -16,7 +16,7 @@
   <header id="header" class="header">
     <div class="header-container">
       <div class="logo">
-        <a href="index.html"><img src="imgs/_branco.png" alt="Logo da Empresa" /></a>
+        <a href="index.html"><img id="site-logo" src="imgs/_branco.png" alt="Logo da Empresa" /></a>
       </div>
       <div class="menu-toggle" id="menu-toggle">
         <span></span>
@@ -164,11 +164,20 @@
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const menuWrapper = document.getElementById('menu-wrapper');
-
+    const logo = document.getElementById('site-logo');
+  
     menuToggle.addEventListener('click', () => {
-    menuToggle.classList.toggle('active'); // animação para X
-    menuWrapper.classList.toggle('show');  // mostra/esconde menu
+      const isOpen = menuWrapper.classList.toggle('show');
+      menuToggle.classList.toggle('active');
+  
+      // Trocar logo
+      if (isOpen) {
+        logo.src = 'imgs/preto.png';
+      } else {
+        logo.src = 'imgs/_branco.png';
+      }
     });
   </script>
+  
 </body>
 </html>
