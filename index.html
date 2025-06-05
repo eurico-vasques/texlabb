@@ -163,7 +163,7 @@
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const menuWrapper = document.getElementById('menu-wrapper');
-    const logo = document.getElementById('site-logo');
+    const header = document.getElementById('header');
   
     menuToggle.addEventListener('click', () => {
       const isOpen = menuWrapper.classList.toggle('show');
@@ -171,9 +171,9 @@
   
       // Trocar logo
       if (isOpen) {
-        logo.src = 'imgs/preto.png';
+        header.style.background = 'black';
       } else {
-        logo.src = 'imgs/_branco.png';
+        header.style.background = 'transparent';
       }
     });
   </script>
