@@ -303,7 +303,7 @@
     }
     .menu-wrapper.show {
         display: flex;
-        background: #000;
+        background: #ddd1c6;
         height: 100vh;
     }
     .menu-wrapper {
