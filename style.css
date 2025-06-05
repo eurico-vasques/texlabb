@@ -302,7 +302,7 @@
     }
     .menu-wrapper.show {
         display: flex;
-        background: #fff;
+        background: #000;
         height: 100vh;
     }
     .menu-wrapper {
@@ -326,8 +326,11 @@
   
     .menu a {
       padding: 10px 0;
-      color: #000!important;
-      font-size: 1.2rem;
+        color: #fff !important;
+        font-size: 2.6rem;
+        margin-top: 33px;
+        font-weight: 900;
+        text-transform: uppercase;
     }
   
     .menu-toggle {
