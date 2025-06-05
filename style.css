@@ -11,27 +11,23 @@
   .menu-toggle {
     display: none;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 6px;
-    width: 40px;
-    height: 40px;
     cursor: pointer;
     z-index: 1100;
+    transition: transform 0.3s ease;
   }
   
   .menu-toggle span {
     display: block;
-    width: 26px;
-    height: 2px;
-    border-radius: 2px;
-    background: transparent;
+    width: 30px;
+    height: 3px;
     border: 1px solid white;
+    border-radius: 3px;
+    background: transparent;
     transition: all 0.3s ease;
-    position: relative;
   }
   
-  /* Anima para "X" */
+  /* Quando o botão está ativo (menu aberto) */
   .menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
@@ -41,8 +37,9 @@
   }
   
   .menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(6px, -6px);
   }
+
   /* MENU MOBILE */
   .menu-wrapper {
     display: flex;
