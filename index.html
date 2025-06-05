@@ -163,17 +163,17 @@
   <script>
     const menuToggle = document.getElementById('menu-toggle');
     const menuWrapper = document.getElementById('menu-wrapper');
-    const header = document.getElementById('menu-wrapper');
-  
+    const header = document.getElementById('header');
+
     menuToggle.addEventListener('click', () => {
       const isOpen = menuWrapper.classList.toggle('show');
       menuToggle.classList.toggle('active');
-  
-      // Trocar logo
+
+      // Altera o fundo do header
       if (isOpen) {
-        header.style.background = 'black';
+        header.classList.add('menu-open');
       } else {
-        header.style.background = 'transparent';
+        header.classList.remove('menu-open');
       }
     });
   </script>
