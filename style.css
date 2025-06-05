@@ -21,7 +21,7 @@
   }
   
   .header-container {
-    max-width: 1200px;
+    max-width: 100%;
     margin: auto;
     padding:3px 20px;
     display: flex;
@@ -69,14 +69,14 @@
   .banner-text {
       position: absolute;
       top: 50%;
-      left: 33%;
+      left: 50%;
       font-family: 'Helvetica', 'Arial', sans-serif;
       font-size: 8vh;
       font-weight: bold;
       color: white;
       padding: 0 20px;
       line-height: 1;
-      text-align: left;
+      text-align: center;
       opacity: 0;
       animation: fadeInZoom 1.2s ease-out 0.3s forwards;
       text-transform: uppercase;
