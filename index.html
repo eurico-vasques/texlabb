@@ -6,6 +6,7 @@
   <title>TextLabb</title>
   <link rel="stylesheet" href="style.css">
   <script src="scripts.js"></script>
+  
 </head>
 <body>
   <div id="loading-screen">
@@ -22,13 +23,14 @@
         <span></span>
         <span></span>
       </div>
-      <div class="menu-wrapper" id="menu-wrapper">      
+      
+      <div class="menu-wrapper" id="menu-wrapper">
         <nav class="menu">
-          <a href="index.html" style="color:#fff">Home</a>
+          <a href="index.html">Home</a>
           <a href="about-us.html">About us</a>
-          <a href="#services">Services</a>
-          <a href="#t-labb">T-LABB Brand</a>
-          <a href="#contact">Contact us</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#t-labb">T-LABB Brand</a>
+          <a href="index.html#contact">Contact us</a>
         </nav>
       </div>
     </div>
@@ -159,5 +161,14 @@
     </div>
     
   </footer>
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuWrapper = document.getElementById('menu-wrapper');
+
+    menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active'); // animação para X
+    menuWrapper.classList.toggle('show');  // mostra/esconde menu
+    });
+  </script>
 </body>
 </html>

@@ -49,10 +49,3 @@ if (scrollText) {
     scrollText.style.transform = `translateX(${scrollAmount * -0.5}px)`;
 }
 });
-const menuToggle = document.getElementById('menu-toggle');
-const menuWrapper = document.getElementById('menu-wrapper');
-
-menuToggle.addEventListener('click', () => {
-menuToggle.classList.toggle('active'); // animação para X
-menuWrapper.classList.toggle('show');  // mostra/esconde menu
-});
