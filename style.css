@@ -296,9 +296,6 @@
     }
   }
   @media (max-width: 768px) {
-    #header.menu-open {
-      background: #000;
-    }
     nav.menu {
         display: flex;
         height: 100vh;
