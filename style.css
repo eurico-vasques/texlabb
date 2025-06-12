@@ -54,7 +54,7 @@
 
   /* MENU MOBILE */
   .menu-wrapper {
-    display: flex!important;
+    display: flex;
   }
   /* Header */
   .header {
@@ -366,19 +366,20 @@
         display: flex;
         height: 100vh;
     }
+    .menu-wrapper.show {
+        display: flex;
+        background: #ddd1c6;
+        height: 100vh;
+    }
     .menu-wrapper {
       display: none;
-      flex-direction: column;
       position: absolute;
       top: 100%;
       right: 0;
-      left: 0;
-      background: black;
-      z-index: 999;
-    }
-  
-    .menu-wrapper.show {
-      display: flex;
+      width: 100%;
+      background: #fff;
+      flex-direction: column;
+      padding: 20px;
     }
     .menu {
       flex-direction: column;
