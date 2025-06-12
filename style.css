@@ -7,6 +7,18 @@
   body {
     font-family: 'Helvetica', 'Arial', sans-serif;
   }
+  .section-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+  }
+  
+  .section-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
   /* BOTÃO MENU */
   .menu-toggle {
     display: none;
