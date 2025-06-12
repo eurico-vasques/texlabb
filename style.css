@@ -622,6 +622,7 @@
     width:100%;
     text-align:right;
     font-size:10px;
+    padding-top: 20px;
   }
   .t-labb-section {
     padding: 80px 20px;
@@ -709,7 +710,7 @@
   }
   #loading-screen {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     position: fixed;
     top: 0;
     left: 0;
