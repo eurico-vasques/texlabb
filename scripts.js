@@ -1,15 +1,23 @@
 window.addEventListener('load', () => {
-const loader = document.getElementById('loading-screen');
-const content = document.getElementById('main-content');
-
-setTimeout(() => {
-    loader.style.opacity = '0';
+    const loader = document.getElementById('loading-screen');
+    const overlay = document.querySelector('.banner-overlay');
+    const title = document.querySelector('.banner-title');
+    const subtitle = document.querySelector('.banner-subtitle');
+  
     setTimeout(() => {
-    loader.style.display = 'none';
-    content.style.display = 'block';
-    }, 500);
-}, 1500); // tempo total do loading em ms
-});
+      // Fade out do loading
+      loader.style.opacity = '0';
+      setTimeout(() => {
+        loader.style.display = 'none';
+  
+        // AGORA faz o banner aparecer com efeito
+        overlay.classList.add('show');
+        title.classList.add('show');
+        subtitle.classList.add('show');
+  
+      }, 500); // depois do fade out
+    }, 1500); // tempo do loading inicial
+  });
 let lastScrollTop = 0;
 const header = document.getElementById('header');
 

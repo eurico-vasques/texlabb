@@ -84,14 +84,13 @@
   /* Banner com parallax */
   .banner-parallax {
     height: 100vh;
-    background-image: url('imgs/text-lab-homepage-4.png'); /* atualiza com o teu path */
+    background-image: url('imgs/text-lab-homepage-4.png');
     background-size: cover;
-    background-color:#ddd1c6;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    overflow: hidden; /* evita margens estranhas */
+    overflow: hidden;
     margin: 0;
     padding: 0;
   }
@@ -139,10 +138,14 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
+    padding: 20px;
     opacity: 0;
-    animation: fadeInOverlay 1.5s ease forwards;
+    transition: opacity 1.5s ease;
   }
   
+.banner-overlay.show {
+  opacity: 1;
+}
   @keyframes fadeInOverlay {
     to {
       opacity: 1;
@@ -161,7 +164,18 @@
   transform: translateY(20px);
   animation: fadeInUp 1s ease forwards 0.5s;
 }
+.banner-title,
+.banner-subtitle {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
 
+.banner-title.show,
+.banner-subtitle.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 .banner-subtitle {
   font-size: 2rem;
   font-weight: 300;
