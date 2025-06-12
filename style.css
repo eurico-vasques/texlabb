@@ -121,17 +121,6 @@
       animation: fadeInZoom 1.2s ease-out 0.3s forwards;
       text-transform: uppercase;
   }
-  
-  @keyframes fadeInZoom {
-    0% {
-      opacity: 0;
-      transform: scale(0.95) translate(-50%, -50%);
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1) translate(-50%, -50%);
-    }
-  }
   #banner1 {
     background-image: url('imgs/text-lab-homepage-4.png');
   }
@@ -143,7 +132,7 @@
   .banner-overlay {
     width: 100%;
     height: 100%;
-    background: #ddd1c6; /* ligeira sombra para melhor leitura */
+    background: rgba(0, 0, 0, 0.4); /* ligeira sombra para melhor leitura */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -160,35 +149,35 @@
     }
   }
   .banner-text {
-    color: white;
-    max-width: 90%;
+  color: white;
+  max-width: 90%;
+}
+
+.banner-title {
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards 0.5s;
+}
+
+.banner-subtitle {
+  font-size: 2rem;
+  font-weight: 300;
+  color: #8b8b8b;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards 0.8s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .banner-title {
-    font-size: 4rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards 0.5s;
-  }
-  
-  .banner-subtitle {
-    font-size: 2rem;
-    font-weight: 300;
-    opacity: 0;
-    color: #8b8b8b;
-    transform: translateY(20px);
-    animation: fadeInUp 1s ease forwards 0.8s;
-  }
-  
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
+}
+
   /* Texto que aparece */
   .scroll-section {
     height: 100vh;
@@ -344,7 +333,7 @@
   }
   @media (max-width: 768px) {
     .banner-title {
-      font-size: 2.4rem;
+        font-size: 2.6rem;
     }
     nav.menu {
         display: flex;
