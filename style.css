@@ -143,7 +143,7 @@
   .banner-overlay {
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* ligeira sombra para melhor leitura */
+    background: #ddd1c6; /* ligeira sombra para melhor leitura */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -167,7 +167,7 @@
   .banner-title {
     font-size: 4rem;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s ease forwards 0.5s;
@@ -177,6 +177,7 @@
     font-size: 2rem;
     font-weight: 300;
     opacity: 0;
+    color: #8b8b8b;
     transform: translateY(20px);
     animation: fadeInUp 1s ease forwards 0.8s;
   }
@@ -342,6 +343,9 @@
     }
   }
   @media (max-width: 768px) {
+    .banner-title {
+      font-size: 2.4rem;
+    }
     nav.menu {
         display: flex;
         height: 100vh;
