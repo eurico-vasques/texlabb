@@ -20,7 +20,11 @@ window.addEventListener('load', () => {
   });
 let lastScrollTop = 0;
 const header = document.getElementById('header');
-
+window.addEventListener('scroll', () => {
+const banner = document.querySelector('.banner-parallax::before');
+const scrollY = window.scrollY;
+document.querySelector('.banner-parallax').style.setProperty('--translateY', `${scrollY * 0.5}px`);
+});
 window.addEventListener('scroll', () => {
     const currentScroll = window.scrollY;
     if (currentScroll > lastScrollTop) {
