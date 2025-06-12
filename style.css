@@ -156,7 +156,7 @@
 .banner-title {
   font-size: 4rem;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 1s ease forwards 0.5s;
@@ -333,7 +333,7 @@
   }
   @media (max-width: 768px) {
     .banner-title {
-        font-size: 2.6rem;
+        font-size: 2.8rem;
     }
     nav.menu {
         display: flex;
