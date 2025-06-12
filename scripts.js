@@ -73,31 +73,3 @@ if (scrollText) {
     scrollText.style.transform = `translateX(${scrollAmount * -0.5}px)`;
 }
 });
-// MENU MOBILE TOGGLE
-const menuToggle = document.getElementById('menu-toggle');
-const menuWrapper = document.getElementById('menu-wrapper');
-const headerToggle = document.getElementById('header');
-
-menuToggle.addEventListener('click', () => {
-  const isOpen = menuWrapper.classList.toggle('show');
-  menuToggle.classList.toggle('active');
-
-  if (isOpen) {
-    headerToggle.style.background = 'black';
-  } else {
-    headerToggle.style.background = 'transparent';
-  }
-});
-
-// Fecha menu mobile ao clicar em qualquer link do menu
-document.querySelectorAll('#menu-wrapper .menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    // Só fecha se o menu estiver aberto (mobile)
-    if (menuWrapper.classList.contains('show')) {
-      menuWrapper.classList.remove('show');
-      menuToggle.classList.remove('active');
-      headerToggle.style.background = 'transparent';
-    }
-  });
-});
-// MENU MOBILE TOGGLE
