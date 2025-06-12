@@ -40,26 +40,75 @@ body {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-/* Header */
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: transparent;
-  backdrop-filter: blur(2px);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  z-index: 1000;
-  transition: top 0.3s ease;
-}
+.section-reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    will-change: opacity, transform;
+  }
+  
+  .section-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* BOTÃO MENU */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    z-index: 1100;
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    width: 30px;
+    height: 3px;
+    border: 1px solid white;
+    border-radius: 3px;
+    background: transparent;
+    transition: all 0.3s ease;
+  }
+  
+  /* Quando o botão está ativo (menu aberto) */
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 5px);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -9px);
+  }
 
-.header-container {
-  max-width: 100%;
-  margin: auto;
-  padding:3px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  /* MENU MOBILE */
+  .menu-wrapper {
+    display: flex;
+  }
+  /* Header */
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: transparent;
+    backdrop-filter: blur(2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    transition: top 0.3s ease;
+  }
+  
+  .header-container {
+    max-width: 100%;
+    margin: auto;
+    padding:3px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
 .logo img {
   height: 70px;
@@ -238,7 +287,40 @@ body {
         left: 50%;
     }
     nav.menu {
-        display: none;
+        display: flex;
+        height: 100vh;
+    }
+    .menu-wrapper.show {
+        display: flex;
+        background: #ddd1c6;
+        height: 100vh;
+    }
+    .menu-wrapper {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      width: 100%;
+      background: #fff;
+      flex-direction: column;
+      padding: 20px;
+    }
+    .menu {
+      flex-direction: column;
+    }
+  
+    .menu a {
+      padding: 0!important;
+      color: #fff !important;
+      font-size: 2.6rem;
+      margin-top: 26px;
+      text-align: center!important;
+      font-weight: 100;
+      margin-left:0!important
+    }
+  
+    .menu-toggle {
+      display: flex;
     }
     .contact-container{
         flex-direction: column!important;
@@ -782,6 +864,21 @@ li {
   });
 
   </script>
-
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuWrapper = document.getElementById('menu-wrapper');
+  
+    menuToggle.addEventListener('click', () => {
+      const isOpen = menuWrapper.classList.toggle('show');
+      menuToggle.classList.toggle('active');
+  
+      // Trocar logo
+      if (isOpen) {
+        document.getElementById("header").style.background = "#ddd1c6";
+      } else {
+        document.getElementById("header").style.background = "transparent";
+      }
+    });
+  </script>
 </body>
 </html>
