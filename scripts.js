@@ -76,16 +76,16 @@ if (scrollText) {
 // MENU MOBILE TOGGLE
 const menuToggle = document.getElementById('menu-toggle');
 const menuWrapper = document.getElementById('menu-wrapper');
-const header = document.getElementById('header');
+const headerToggle = document.getElementById('header');
 
 menuToggle.addEventListener('click', () => {
   const isOpen = menuWrapper.classList.toggle('show');
   menuToggle.classList.toggle('active');
 
   if (isOpen) {
-    header.style.background = 'black';
+    headerToggle.style.background = 'black';
   } else {
-    header.style.background = 'transparent';
+    headerToggle.style.background = 'transparent';
   }
 });
 
@@ -96,7 +96,7 @@ document.querySelectorAll('#menu-wrapper .menu a').forEach(link => {
     if (menuWrapper.classList.contains('show')) {
       menuWrapper.classList.remove('show');
       menuToggle.classList.remove('active');
-      header.style.background = 'transparent';
+      headerToggle.style.background = 'transparent';
     }
   });
 });
